@@ -26,7 +26,9 @@ pipe.to("cuda")
 # ----------------------------
 prompt = "a man standing in front of a lake at noon, Sunny, soft lighting"
 height = 512
-width = 512
+width = (int(height * 1 / 1) // 8) * 8  # aspect ratio divisible by 8
+print(f"Using height={height}, width={width}")
+
 num_inference_steps = 20
 guidance_scale = 6.5
 
